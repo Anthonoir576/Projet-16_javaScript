@@ -81,7 +81,7 @@ const display = {
 
         `;
 
-        this.elementShow('question', endQuizHTML);
+        this.elementShow('quiz', endQuizHTML);
 
     },
 
@@ -115,7 +115,15 @@ const display = {
 
     },
 
+    progress: function() {
+
+        let currentQuestionNumber = quiz.currentQuestionIndex + 1;
+        this.elementShow("progress", "Question " + currentQuestionNumber + " sur " + quiz.questions.length);
+
+    },
 }
+
+
 
 // GAME LOGIC
 quizApp = () => {
@@ -130,6 +138,7 @@ quizApp = () => {
         // QUESTION CHOICES PROGRESS    
         display.question();
         display.choices();
+        display.progress();
 
     };
 
