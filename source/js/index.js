@@ -37,7 +37,7 @@ class Quiz {
 
     };
 
-    getCurrentQuestion() {
+    getCurrentQuestion() { 
 
         return this.questions[this.currentQuestionIndex];
 
