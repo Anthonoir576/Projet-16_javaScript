@@ -4,7 +4,7 @@ class Question {
     constructor(text, choices, answer) {
 
         this.text = text;
-        this.choises = choices;
+        this.choices = choices;
         this.answer = answer;
 
     };
@@ -51,7 +51,7 @@ class Quiz {
 
         };
 
-        this.getCurrentQuestion++;
+        this.currentQuestionIndex++;
 
     };
 
@@ -106,10 +106,16 @@ const display = {
 
         };
 
+        for(let i = 0; i < choices.length; i++) {
 
-    }
+            this.elementShow("choice" + i, choices[i]);
+            guessUser("guess" + i, choices[i]);
 
-};
+        }
+
+    },
+
+}
 
 // GAME LOGIC
 quizApp = () => {
